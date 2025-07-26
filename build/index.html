@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/lionanddeer.jpg" type="image/x-icon">
+    <script defer src="js/main.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.11.2/math.min.js"></script>
+</head>
+<body class="min-h-screen bg-[url('../img/lionanddeer.jpg')] bg-cover bg-center bg-no-repeat grid place-content-center">
+    <main class="relative flex justify-center items-center">
+
+        <div class="calculator hidden max-[767px]:block w-80 h-[430px] relative bg-black/90 rounded-xl justify-center items-center flex-col">
+            <input class="display w-full py-5 text-left pb-0 absolute top-0 rounded-tl-[0.75rem] rounded-tr-[0.75rem]
+            bg-black/50 text-white text-2xl border-none outline-none" readonly>
+            <div class="absolute left-6 top-16 grid grid-cols-4 gap-2">
+
+                <button class="gird place-content-center w-16 h-16 bg-[#333] hover:bg-[#575656] focus:bg-[#575656] active:bg-[#797777] text-white text-2xl font-bold cursor-pointer rounded-full" onclick="operator('1')">1</button>
+                <button class="gird place-content-center w-16 h-16 bg-[#333] hover:bg-[#575656] focus:bg-[#575656] active:bg-[#797777] text-white text-2xl font-bold cursor-pointer rounded-full" onclick="operator('2')">2</button>
+                <button class="gird place-content-center w-16 h-16 bg-[#333] hover:bg-[#575656] focus:bg-[#575656] active:bg-[#797777] text-white text-2xl font-bold cursor-pointer rounded-full" onclick="operator('3')">3</button>
+                <button class="gird place-content-center w-16 h-16 bg-[#333] hover:bg-[#575656] focus:bg-[#575656] active:bg-[#797777] text-white text-2xl font-bold cursor-pointer rounded-full" onclick="operator('4')">4</button>
+                <button class="gird place-content-center w-16 h-16 bg-[#333] hover:bg-[#575656] focus:bg-[#575656] active:bg-[#797777] text-white text-2xl font-bold cursor-pointer rounded-full" onclick="operator('5')">5</button>
+                <button class="gird place-content-center w-16 h-16 bg-[#333] hover:bg-[#575656] focus:bg-[#575656] active:bg-[#797777] text-white text-2xl font-bold cursor-pointer rounded-full" onclick="operator('6')">6</button>
+                <button class="gird place-content-center w-16 h-16 bg-[#333] hover:bg-[#575656] focus:bg-[#575656] active:bg-[#797777] text-white text-2xl font-bold cursor-pointer rounded-full" onclick="operator('7')">7</button>
+                <button class="gird place-content-center w-16 h-16 bg-[#333] hover:bg-[#575656] focus:bg-[#575656] active:bg-[#797777] text-white text-2xl font-bold cursor-pointer rounded-full" onclick="operator('8')">8</button>
+                <button class="gird place-content-center w-16 h-16 bg-[#333] hover:bg-[#575656] focus:bg-[#575656] active:bg-[#797777] text-white text-2xl font-bold cursor-pointer rounded-full" onclick="operator('9')">9</button>
+                <button class="gird place-content-center w-16 h-16 bg-[#333] hover:bg-[#575656] focus:bg-[#575656] active:bg-[#797777] text-white text-2xl font-bold cursor-pointer rounded-full" onclick="operator('0')">0</button>
+                <button class="gird place-content-center w-16 h-16 bg-[#ff9900] hover:bg-[#eeaf3b] focus:bg-[#eeaf3b] active:bg-[#cc9e48] text-white text-2xl font-bold cursor-pointer rounded-full" onclick="equal('=')">=</button>
+                <button class="gird place-content-center w-16 h-16 bg-[#ff9900] hover:bg-[#eeaf3b] focus:bg-[#eeaf3b] active:bg-[#cc9e48] text-white text-2xl font-bold cursor-pointer rounded-full" onclick="operator('c')">C</button>
+                <button class="gird place-content-center w-16 h-16 bg-[#ff9900] hover:bg-[#eeaf3b] focus:bg-[#eeaf3b] active:bg-[#cc9e48] text-white text-2xl font-bold cursor-pointer rounded-full" onclick="operator('/')">/</button>
+                <button class="gird place-content-center w-16 h-16 bg-[#ff9900] hover:bg-[#eeaf3b] focus:bg-[#eeaf3b] active:bg-[#cc9e48] text-white text-2xl font-bold cursor-pointer rounded-full" onclick="operator('*')">*</button>
+                <button class="gird place-content-center w-16 h-16 bg-[#ff9900] hover:bg-[#eeaf3b] focus:bg-[#eeaf3b] active:bg-[#cc9e48] text-white text-2xl font-bold cursor-pointer rounded-full" onclick="operator('.')">.</button>
+                <button class="gird place-content-center w-16 h-16 bg-[#ff9900] hover:bg-[#eeaf3b] focus:bg-[#eeaf3b] active:bg-[#cc9e48] text-white text-2xl font-bold cursor-pointer rounded-full" onclick="operator('+')">+</button>
+                <button class="gird place-content-center w-16 h-16 bg-[#ff9900] hover:bg-[#eeaf3b] focus:bg-[#eeaf3b] active:bg-[#cc9e48] text-white text-2xl font-bold cursor-pointer rounded-full" onclick="equal('-')">-</button>
+            </div>
+        </div>
+
+        <button class="displayButton btnLeft btnHide absolute -top-[40%] -left-60 w-52 h-16 bg-black/90 text-white/90 text-xl font-bold rounded-3xl border-none outline-none hover:transform hover:duration-200 hover:ease-out hover:scale-105 hover:shadow-[0px_0px_20px_5px_#333] hover:text-shadow focus:transform focus:duration-200 focus:ease-out focus:scale-105 focus:shadow-[0px_0px_20px_5px_#333] focus:text-shadow hover:border-none hover:outline-none focus:border-none focus:outline-none active:bg-black/100 active:text-white/100">Display Calculator</button>
+
+        <button class="hideButton btnRight btnHide absolute -top-[40%] -right-60 w-52 h-16 bg-black/90 text-white/90 text-xl font-bold rounded-3xl border-none outline-none hover:transform hover:duration-200 hover:ease-out hover:scale-105 hover:shadow-[0px_0px_20px_5px_#333] hover:text-shadow focus:transform focus:duration-200 focus:ease-out focus:scale-105 focus:shadow-[0px_0px_20px_5px_#333] focus:text-shadow hover:border-none hover:outline-none focus:border-none focus:outline-none active:bg-black/100 active:text-white/100">Hide Calculator</button>
+
+    </main>
+    
+</body>
+</html>
