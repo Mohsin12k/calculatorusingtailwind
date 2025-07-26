@@ -775,7 +775,7 @@ video {
   }
 }
 
-@media screen and (min-width: 1024px) and (max-width: 1026px){
+@media screen and (min-width: 1024px){
   .btnRight {
     margin-right: 5%;
     margin-top: 50%;
